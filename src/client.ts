@@ -8,7 +8,7 @@ dotenv.config({ path: ".env" });
 async function start() {
   const client = new Client({
     simpleCommand: {
-      prefix: "!",
+      prefix: "]",
     },
     intents: [
       Intents.FLAGS.GUILDS,
