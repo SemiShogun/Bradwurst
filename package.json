@@ -1,0 +1,42 @@
+{
+  "name": "bradwurst-bot",
+  "version": "1.0.0",
+  "description": "A fun all-purpose bot",
+  "main": "client.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && node --loader ts-node/esm/transpile-only src/client.ts",
+    "start": "nodemon --exec node --loader ts-node/esm/transpile-only src/client.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SemiShogun/Bradwurst-bot.git"
+  },
+  "keywords": [
+    "Bratwurst",
+    "Discord",
+    "Bot"
+  ],
+  "type": "module",
+  "author": "SemiShogun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SemiShogun/Bradwurst-bot/issues"
+  },
+  "homepage": "https://github.com/SemiShogun/Bradwurst-bot#readme",
+  "dependencies": {
+    "@discordx/importer": "^1.1.2",
+    "@discordx/utilities": "^3.1.5",
+    "discord.js": "^13.2.0",
+    "discordx": "^9.0.1",
+    "dotenv": "^10.0.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}
