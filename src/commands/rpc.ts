@@ -8,13 +8,13 @@ export abstract class Rpc {
   async startGame(interaction: CommandInteraction): Promise<void> {
     interaction.channel?.send("Singleplayer Round started, react with Rock, Paper or Scissor!").then(
       sentMessage => {
-        sentMessage.react('🥌')
+        sentMessage.react('🪨')
         .then(() => sentMessage.react('🗞️'))
         .then(() => sentMessage.react('✂️'));
 
         const filter = (reaction: MessageReaction, user: User) => {
           if (reaction.emoji.name != null) {
-            return ['🥌', '🗞️', '✂️'].includes(reaction.emoji.name) && user.id === interaction.user.id;
+            return ['🪨', '🗞️', '✂️'].includes(reaction.emoji.name) && user.id === interaction.user.id;
           }
           return false;
         };
@@ -22,7 +22,7 @@ export abstract class Rpc {
         sentMessage.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] })
         .then(collected => {
           const reaction = collected.first();
-          const choices = ['🥌', '🗞️', '✂️'];
+          const choices = ['🪨', '🗞️', '✂️'];
           const result = choices[Math.floor(Math.random() * 3)];
           if (reaction != undefined && interaction.channel != null) {
             if (reaction.emoji.name === result) {
@@ -30,19 +30,19 @@ export abstract class Rpc {
             }
     
             switch (reaction.emoji.name) {
-            case '🥌':
+            case '🪨':
               if (result === '🗞️') {
-                return interaction.channel.send('I won! \n🗞️ covers 🥌');
+                return interaction.channel.send('I won! \n🗞️ covers 🪨');
               }
-              return interaction.channel.send('You won! \n🥌 smashes ✂️');
+              return interaction.channel.send('You won! \n🪨 smashes ✂️');
             case '🗞️':
               if (result === '✂️') {
                 return interaction.channel.send('I won! \n✂️ cut 🗞️');
               }
-              return interaction.channel.send('You won! \n🗞️ covers 🥌');
+              return interaction.channel.send('You won! \n🗞️ covers 🪨');
             case '✂️':
-              if (result === '🥌') {
-                return interaction.channel.send('I won! \n🥌 smashes ✂️');
+              if (result === '🪨') {
+                return interaction.channel.send('I won! \n🪨 smashes ✂️');
               }
               return interaction.channel.send('You won! \n✂️ cuts 🗞️');
             }
