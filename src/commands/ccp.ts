@@ -30,6 +30,11 @@ export abstract class Ccp {
       answers: ["rock", "wok"],
       correctAnswer: "wok",
     },
+    {
+      question: "Who is our beloved Chairman",
+      answers: ["Xi Jinping", "Winnie Pooh", "John Xina", "Person with highest Credit score"],
+      correctAnswer: "Xi Jinping",
+    },
   ];
 
   @Slash("ccp")
