@@ -30,7 +30,7 @@ async function start() {
       guild: { log: true },
       global: { log: true },
     });
-    client.user?.setActivity("Playing /bwhelp");
+    client.user?.setActivity("Playing /help");
     // init permissions; enabled log to see changes
     await client.initApplicationPermissions(true);
 

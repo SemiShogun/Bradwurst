@@ -1,14 +1,19 @@
-import { CommandInteraction, MessageEmbed } from "discord.js";
-import { Discord, Slash } from "discordx";
+import {
+  Collection,
+  CommandInteraction,
+  Message,
+  MessageEmbed,
+} from "discord.js";
+import { Discord, SimpleCommandMessage, Slash } from "discordx";
 
 @Discord()
 export abstract class slashes {
   @Slash("wave")
   async wave(interaction: CommandInteraction): Promise<void> {
-    interaction.reply(`:wave: ${interaction.user}`);
+    await interaction.reply("👋");
   }
 
-  @Slash("bwhelp")
+  @Slash("help")
   async help(interaction: CommandInteraction): Promise<void> {
     const embed = new MessageEmbed()
       .setTitle("**Bradwurst Help**")
@@ -19,7 +24,7 @@ export abstract class slashes {
       )
       .setFields([
         {
-          name: "]help",
+          name: "/help",
           value:
             "Returns an overview of all the available commands in the bradwurst bot",
         },
@@ -39,6 +44,5 @@ export abstract class slashes {
     await interaction.reply({
       embeds: [embed],
     });
-    // command.message.reply({ embed });
   }
 }
