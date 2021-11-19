@@ -3,7 +3,7 @@ import { Discord, SimpleCommand, SimpleCommandMessage, Slash } from "discordx";
 import { Question } from "../types/Question";
 
 @Discord()
-export abstract class ccp {
+export abstract class Ccp {
   private questions: Array<Question> = [
     {
       question: "Who is my favourite hololive character?",

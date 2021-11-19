@@ -7,12 +7,7 @@ import {
 import { Discord, SimpleCommandMessage, Slash } from "discordx";
 
 @Discord()
-export abstract class slashes {
-  @Slash("wave")
-  async wave(interaction: CommandInteraction): Promise<void> {
-    await interaction.reply("👋");
-  }
-
+export abstract class Help {
   @Slash("help")
   async help(interaction: CommandInteraction): Promise<void> {
     const embed = new MessageEmbed()
