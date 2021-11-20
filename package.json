@@ -18,6 +18,9 @@
     "Discord",
     "Bot"
   ],
+  "engines": {
+    "node": ">=16.13.0"
+  },
   "type": "module",
   "author": "SemiShogun",
   "license": "MIT",
