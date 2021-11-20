@@ -3,7 +3,10 @@ import "reflect-metadata";
 import { Intents, Interaction, Message } from "discord.js";
 import { Client } from "discordx";
 import { dirname, importx } from "@discordx/importer";
-dotenv.config();
+
+if (process.env.NODE_ENV === "development") {
+  dotenv.config();
+}
 
 async function start() {
   const client = new Client({
