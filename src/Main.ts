@@ -3,12 +3,15 @@ import "reflect-metadata";
 import { Intents, Interaction, Message } from "discord.js";
 import { Client } from "discordx";
 import { dirname, importx } from "@discordx/importer";
-dotenv.config({ path: ".env" });
+
+if (process.env.NODE_ENV === "development") {
+  dotenv.config();
+}
 
 async function start() {
   const client = new Client({
     simpleCommand: {
-      prefix: "!",
+      prefix: "]",
     },
     intents: [
       Intents.FLAGS.GUILDS,
@@ -30,7 +33,7 @@ async function start() {
       guild: { log: true },
       global: { log: true },
     });
-
+    client.user?.setActivity("Playing /help");
     // init permissions; enabled log to see changes
     await client.initApplicationPermissions(true);
 

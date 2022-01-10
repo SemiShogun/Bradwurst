@@ -2,11 +2,11 @@
   "name": "bradwurst-bot",
   "version": "1.0.0",
   "description": "A fun all-purpose bot",
-  "main": "client.ts",
+  "main": "Main.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc && node --loader ts-node/esm/transpile-only src/client.ts",
-    "start": "nodemon --exec node --loader ts-node/esm/transpile-only src/client.ts",
+    "start": "tsc && node --loader ts-node/esm/transpile-only src/Main.ts",
+    "dev": "nodemon --exec node --loader ts-node/esm/transpile-only src/Main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +18,9 @@
     "Discord",
     "Bot"
   ],
+  "engines": {
+    "node": ">=16.13.0"
+  },
   "type": "module",
   "author": "SemiShogun",
   "license": "MIT",
