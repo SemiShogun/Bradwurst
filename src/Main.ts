@@ -5,6 +5,7 @@ import { Client } from "discordx";
 import { dirname, importx } from "@discordx/importer";
 
 if (process.env.NODE_ENV === "development") {
+  console.log('Loading .env file...');
   dotenv.config();
 }
 
@@ -23,7 +24,7 @@ async function start() {
     // Glob string for loading classes
     classes: [`./commands/*.{js,ts}`],
     // If you only want to use guild commands, uncomment this line
-    // botGuilds: [(client) => client.guilds.cache.map((guild) => guild.id)],
+    botGuilds: process.env.NODE_ENV ? ["930471643594240023"] : undefined,
     // silent: true,
   });
 
@@ -33,7 +34,7 @@ async function start() {
       guild: { log: true },
       global: { log: true },
     });
-    client.user?.setActivity("Playing /help");
+    client.user?.setActivity("/help");
     // init permissions; enabled log to see changes
     await client.initApplicationPermissions(true);
 
@@ -49,7 +50,8 @@ async function start() {
   });
 
   await importx(dirname(import.meta.url) + "/{events,commands}/**/*.{ts,js}");
-  client.login(process.env.TOKEN!);
+
+  await client.login(process.env.TOKEN!);
 }
 
 start();
