@@ -12,8 +12,15 @@ Create a .env file and add the Bot Token (See https://discord.com/developers/doc
 TOKEN={Your bot token here}
 ```
 
-## Running the project
+## Running the project for development
 To run the project with Nodemon, simply type down:
+```
+npm run dev
+```
+
+## Running the project for production
+To run the project, as were it in production, type down:
 ```
 npm run start
 ```
+Keep in mind, that you need to have set the bot token in your environment variables. (Not in the .env file)
