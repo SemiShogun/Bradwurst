@@ -24,7 +24,7 @@ async function start() {
     // Glob string for loading classes
     classes: [`./commands/*.{js,ts}`],
     // If you only want to use guild commands, uncomment this line
-    botGuilds: process.env.NODE_ENV ? ["930471643594240023"] : undefined,
+    // botGuilds: [(client) => client.guilds.cache.map((guild) => guild.id)],
     // silent: true,
   });
 
